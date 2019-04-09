@@ -1,0 +1,15 @@
+C:\Users\ugur\source\repos\enpara\enpara\bin\Debug\enpara.exe.config
+C:\Users\ugur\source\repos\enpara\enpara\bin\Debug\enpara.exe
+C:\Users\ugur\source\repos\enpara\enpara\bin\Debug\enpara.pdb
+C:\Users\ugur\source\repos\enpara\enpara\bin\Debug\HtmlAgilityPack.dll
+C:\Users\ugur\source\repos\enpara\enpara\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\ugur\source\repos\enpara\enpara\bin\Debug\HtmlAgilityPack.xml
+C:\Users\ugur\source\repos\enpara\enpara\obj\Debug\enpara.mainForm.resources
+C:\Users\ugur\source\repos\enpara\enpara\obj\Debug\enpara.Properties.Resources.resources
+C:\Users\ugur\source\repos\enpara\enpara\obj\Debug\enpara.csproj.GenerateResource.cache
+C:\Users\ugur\source\repos\enpara\enpara\obj\Debug\enpara.csproj.CoreCompileInputs.cache
+C:\Users\ugur\source\repos\enpara\enpara\obj\Debug\enpara.csproj.CopyComplete
+C:\Users\ugur\source\repos\enpara\enpara\obj\Debug\enpara.exe
+C:\Users\ugur\source\repos\enpara\enpara\obj\Debug\enpara.pdb
+C:\Users\ugur\source\repos\enpara\enpara\obj\Debug\enpara.aboutForm.resources
+C:\Users\ugur\source\repos\enpara\enpara\obj\Debug\enpara.settingsForm.resources
