@@ -97,7 +97,7 @@ namespace enpara.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("5000")]
         public string refreshInterval {
             get {
                 return ((string)(this["refreshInterval"]));
@@ -109,7 +109,7 @@ namespace enpara.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
         public string requestTimeout {
             get {
                 return ((string)(this["requestTimeout"]));
