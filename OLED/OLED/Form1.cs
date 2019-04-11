@@ -13,7 +13,7 @@ namespace OLED
 {
     public partial class Form1 : Form
     {
-        Bitmap drawnBmp = null;
+        Bitmap bmp = null;
         
 
         string _filename = null;
@@ -25,13 +25,13 @@ namespace OLED
 
         byte[,] _buffer = new byte[128,64];
 
+        byte[] bitmapBytes;
+
         public Form1()
         {
             InitializeComponent();
             gp = panel1.CreateGraphics();
-            drawnBmp = new Bitmap(128, 64, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
-            
-
+            bmp = new Bitmap(128, 64, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
         }
 
         int x = 0;
@@ -47,14 +47,12 @@ namespace OLED
                     //normalizePosition(e.X, e.Y, out x, out y);
                     gp.FillRectangle(Brushes.Black, x + 1, y + 1, 6, 6);
                     updateBufferAt(x / 7, y / 7, bufferEnum.set);
-                    drawnBmp.SetPixel(x / 7, y / 7, Color.White);
                 }
                 else
                 {
                     //normalizePosition(e.X, e.Y, out x, out y);
                     gp.FillRectangle(Brushes.White, x + 1, y + 1, 6, 6);
                     updateBufferAt(x / 7, y / 7, bufferEnum.reset);
-                    drawnBmp.SetPixel(x / 7, y / 7, Color.White);
 
                 }
             }
@@ -131,15 +129,34 @@ namespace OLED
             if (result == DialogResult.OK) // Test result.
             {
                 _filename = openFileDialog.FileName;
+                bmp = new Bitmap(_filename);
+
+                bitmapBytes = ImageToByte(bmp);
+                Console.WriteLine(bitmapBytes.Length);
             }
+            int a, b;
 
             
+
             
+            for(int i = 62; i<1086; i++)
+            {
+                for(int t = 128; t > 0; t = t / 2)
+                {
+                    if((bitmapBytes[i] & t) != t)
+                    {
+                        a =  (int)(((i - 62) % 16) * 8 + 7 - Math.Log(t, 2)) * 7 + 1;
+                        b = 441 - (((i - 62) - (i - 62) % 16) / 16) * 7 + 1;
+                        gp.FillRectangle(Brushes.Red, a, b, 6, 6);
+                    }
+                }
+                
+            }
         }
 
         private void _button_saveBitmap_Click(object sender, EventArgs e)
         {
-            drawnBmp.Save("C:\\Users\\u00747649\\source\\repos\\OLED\\testfile.bmp", System.Drawing.Imaging.ImageFormat.Bmp);
+            bmp.Save("C:\\Users\\u00747649\\source\\repos\\OLED\\testfile.bmp", System.Drawing.Imaging.ImageFormat.Bmp);
         }
 
         void clearPanel()
@@ -163,6 +180,19 @@ namespace OLED
         void serialInit()
         {
             string[] ports = SerialPort.GetPortNames();
+        }
+
+        public static byte[] ImageToByte(Image img)
+        {
+            ImageConverter converter = new ImageConverter();
+            return (byte[])converter.ConvertTo(img, typeof(byte[]));
+        }
+
+        public static byte[] imageToByteArray(Image imageIn)
+        {
+            System.IO.MemoryStream ms = new System.IO.MemoryStream();
+            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+            return ms.ToArray();
         }
     }
 }
