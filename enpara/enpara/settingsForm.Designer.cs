@@ -30,6 +30,12 @@
         {
             this._tabs_settings = new System.Windows.Forms.TabControl();
             this._tab_general = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this._label_timeout = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this._label_interval = new System.Windows.Forms.Label();
+            this._nud_requestTimeout = new System.Windows.Forms.NumericUpDown();
+            this._nud_refreshInterval = new System.Windows.Forms.NumericUpDown();
             this._cb_alwaysOnTop = new System.Windows.Forms.CheckBox();
             this._tab_network = new System.Windows.Forms.TabPage();
             this._gb_proxy = new System.Windows.Forms.GroupBox();
@@ -42,28 +48,20 @@
             this._tb_proxyPort = new System.Windows.Forms.TextBox();
             this._tb_proxyAddress = new System.Windows.Forms.TextBox();
             this._cb_proxyFlag = new System.Windows.Forms.CheckBox();
-            this._tab_notifications = new System.Windows.Forms.TabPage();
             this._button_cancel = new System.Windows.Forms.Button();
             this._button_save = new System.Windows.Forms.Button();
-            this._nud_refreshInterval = new System.Windows.Forms.NumericUpDown();
-            this._nud_requestTimeout = new System.Windows.Forms.NumericUpDown();
-            this._label_interval = new System.Windows.Forms.Label();
-            this._label_timeout = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this._tabs_settings.SuspendLayout();
             this._tab_general.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._nud_requestTimeout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._nud_refreshInterval)).BeginInit();
             this._tab_network.SuspendLayout();
             this._gb_proxy.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._nud_refreshInterval)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._nud_requestTimeout)).BeginInit();
             this.SuspendLayout();
             // 
             // _tabs_settings
             // 
             this._tabs_settings.Controls.Add(this._tab_general);
             this._tabs_settings.Controls.Add(this._tab_network);
-            this._tabs_settings.Controls.Add(this._tab_notifications);
             this._tabs_settings.Location = new System.Drawing.Point(12, 12);
             this._tabs_settings.Name = "_tabs_settings";
             this._tabs_settings.SelectedIndex = 0;
@@ -86,6 +84,96 @@
             this._tab_general.TabIndex = 0;
             this._tab_general.Text = "General";
             this._tab_general.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(160, 107);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(20, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "ms";
+            // 
+            // _label_timeout
+            // 
+            this._label_timeout.AutoSize = true;
+            this._label_timeout.Location = new System.Drawing.Point(16, 107);
+            this._label_timeout.Name = "_label_timeout";
+            this._label_timeout.Size = new System.Drawing.Size(45, 13);
+            this._label_timeout.TabIndex = 2;
+            this._label_timeout.Text = "Timeout";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(160, 71);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(20, 13);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "ms";
+            // 
+            // _label_interval
+            // 
+            this._label_interval.AutoSize = true;
+            this._label_interval.Location = new System.Drawing.Point(16, 71);
+            this._label_interval.Name = "_label_interval";
+            this._label_interval.Size = new System.Drawing.Size(82, 13);
+            this._label_interval.TabIndex = 2;
+            this._label_interval.Text = "Refresh Interval";
+            // 
+            // _nud_requestTimeout
+            // 
+            this._nud_requestTimeout.Increment = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this._nud_requestTimeout.Location = new System.Drawing.Point(100, 105);
+            this._nud_requestTimeout.Maximum = new decimal(new int[] {
+            30000,
+            0,
+            0,
+            0});
+            this._nud_requestTimeout.Minimum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this._nud_requestTimeout.Name = "_nud_requestTimeout";
+            this._nud_requestTimeout.Size = new System.Drawing.Size(54, 20);
+            this._nud_requestTimeout.TabIndex = 1;
+            this._nud_requestTimeout.Value = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            // 
+            // _nud_refreshInterval
+            // 
+            this._nud_refreshInterval.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this._nud_refreshInterval.Location = new System.Drawing.Point(100, 69);
+            this._nud_refreshInterval.Maximum = new decimal(new int[] {
+            15000,
+            0,
+            0,
+            0});
+            this._nud_refreshInterval.Minimum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this._nud_refreshInterval.Name = "_nud_refreshInterval";
+            this._nud_refreshInterval.Size = new System.Drawing.Size(54, 20);
+            this._nud_refreshInterval.TabIndex = 1;
+            this._nud_refreshInterval.Value = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
             // 
             // _cb_alwaysOnTop
             // 
@@ -207,16 +295,6 @@
             this._cb_proxyFlag.Text = "Use proxy";
             this._cb_proxyFlag.UseVisualStyleBackColor = true;
             // 
-            // _tab_notifications
-            // 
-            this._tab_notifications.Location = new System.Drawing.Point(4, 22);
-            this._tab_notifications.Name = "_tab_notifications";
-            this._tab_notifications.Padding = new System.Windows.Forms.Padding(3);
-            this._tab_notifications.Size = new System.Drawing.Size(208, 243);
-            this._tab_notifications.TabIndex = 2;
-            this._tab_notifications.Text = "Notifications";
-            this._tab_notifications.UseVisualStyleBackColor = true;
-            // 
             // _button_cancel
             // 
             this._button_cancel.Location = new System.Drawing.Point(72, 221);
@@ -237,96 +315,6 @@
             this._button_save.UseVisualStyleBackColor = true;
             this._button_save.Click += new System.EventHandler(this._button_save_Click);
             // 
-            // _nud_refreshInterval
-            // 
-            this._nud_refreshInterval.Increment = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this._nud_refreshInterval.Location = new System.Drawing.Point(100, 69);
-            this._nud_refreshInterval.Maximum = new decimal(new int[] {
-            15000,
-            0,
-            0,
-            0});
-            this._nud_refreshInterval.Minimum = new decimal(new int[] {
-            2000,
-            0,
-            0,
-            0});
-            this._nud_refreshInterval.Name = "_nud_refreshInterval";
-            this._nud_refreshInterval.Size = new System.Drawing.Size(54, 20);
-            this._nud_refreshInterval.TabIndex = 1;
-            this._nud_refreshInterval.Value = new decimal(new int[] {
-            2000,
-            0,
-            0,
-            0});
-            // 
-            // _nud_requestTimeout
-            // 
-            this._nud_requestTimeout.Increment = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
-            this._nud_requestTimeout.Location = new System.Drawing.Point(100, 105);
-            this._nud_requestTimeout.Maximum = new decimal(new int[] {
-            30000,
-            0,
-            0,
-            0});
-            this._nud_requestTimeout.Minimum = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
-            this._nud_requestTimeout.Name = "_nud_requestTimeout";
-            this._nud_requestTimeout.Size = new System.Drawing.Size(54, 20);
-            this._nud_requestTimeout.TabIndex = 1;
-            this._nud_requestTimeout.Value = new decimal(new int[] {
-            500,
-            0,
-            0,
-            0});
-            // 
-            // _label_interval
-            // 
-            this._label_interval.AutoSize = true;
-            this._label_interval.Location = new System.Drawing.Point(16, 71);
-            this._label_interval.Name = "_label_interval";
-            this._label_interval.Size = new System.Drawing.Size(82, 13);
-            this._label_interval.TabIndex = 2;
-            this._label_interval.Text = "Refresh Interval";
-            // 
-            // _label_timeout
-            // 
-            this._label_timeout.AutoSize = true;
-            this._label_timeout.Location = new System.Drawing.Point(16, 107);
-            this._label_timeout.Name = "_label_timeout";
-            this._label_timeout.Size = new System.Drawing.Size(45, 13);
-            this._label_timeout.TabIndex = 2;
-            this._label_timeout.Text = "Timeout";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(160, 71);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(20, 13);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "ms";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(160, 107);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(20, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "ms";
-            // 
             // settingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -341,11 +329,11 @@
             this._tabs_settings.ResumeLayout(false);
             this._tab_general.ResumeLayout(false);
             this._tab_general.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._nud_requestTimeout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._nud_refreshInterval)).EndInit();
             this._tab_network.ResumeLayout(false);
             this._gb_proxy.ResumeLayout(false);
             this._gb_proxy.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._nud_refreshInterval)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._nud_requestTimeout)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -367,7 +355,6 @@
         private System.Windows.Forms.CheckBox _cb_proxyFlag;
         private System.Windows.Forms.Button _button_cancel;
         private System.Windows.Forms.Button _button_save;
-        private System.Windows.Forms.TabPage _tab_notifications;
         private System.Windows.Forms.CheckBox _cb_alwaysOnTop;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label _label_timeout;

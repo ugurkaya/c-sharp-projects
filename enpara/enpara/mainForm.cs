@@ -27,7 +27,7 @@ namespace enpara
             uiUpdateThread.Start();
             en = new Enpara();
 
-            this.TopLevel = Properties.Settings.Default.alwaysOnTopFlag;
+            changeTopMost(Properties.Settings.Default.alwaysOnTopFlag);
             
             
         }
@@ -102,8 +102,26 @@ namespace enpara
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            settingsForm settings = new settingsForm();
+            settingsForm settings = new settingsForm(this);
             settings.ShowDialog();
+        }
+
+        public void changeTopMost(bool flag)
+        {
+            
+            this.TopMost = flag;
+            this.Update();
+        }
+
+        private void alarmsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void alarmsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            alarmForm af = new alarmForm();
+            af.ShowDialog();
         }
     }
 }

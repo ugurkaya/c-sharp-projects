@@ -25,7 +25,7 @@ namespace enpara.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool isProxyEnabledFlag {
             get {
                 return ((bool)(this["isProxyEnabledFlag"]));
@@ -37,7 +37,7 @@ namespace enpara.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("127.0.0.1")]
         public string proxyAddress {
             get {
                 return ((string)(this["proxyAddress"]));
@@ -49,7 +49,7 @@ namespace enpara.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("3128")]
         public string proxyPort {
             get {
                 return ((string)(this["proxyPort"]));
@@ -116,6 +116,18 @@ namespace enpara.Properties {
             }
             set {
                 this["requestTimeout"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string alarmList {
+            get {
+                return ((string)(this["alarmList"]));
+            }
+            set {
+                this["alarmList"] = value;
             }
         }
     }

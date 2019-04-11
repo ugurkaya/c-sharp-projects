@@ -3,13 +3,13 @@
   <Profiles />
   <Settings>
     <Setting Name="isProxyEnabledFlag" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="proxyAddress" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">127.0.0.1</Value>
     </Setting>
     <Setting Name="proxyPort" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">3128</Value>
     </Setting>
     <Setting Name="proxyUser" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -25,6 +25,9 @@
     </Setting>
     <Setting Name="requestTimeout" Type="System.String" Scope="User">
       <Value Profile="(Default)">200</Value>
+    </Setting>
+    <Setting Name="alarmList" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>
